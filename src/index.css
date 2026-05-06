@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-purple: #9333ea; /* purple-600 */
+  --color-brand-purple-hover: #7e22ce; /* purple-700 */
+  --color-brand-sky: #0369a1; /* sky-700 */
+  --color-brand-sky-light: #f0f9ff; /* sky-50 */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-purple hover:bg-brand-purple-hover text-white font-bold py-4 px-8 rounded-xl transition-all transform active:scale-[0.98] shadow-lg shadow-purple-200 flex items-center justify-center gap-2;
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-16 md:py-24;
+  }
+
+  .card-premium {
+    @apply bg-white rounded-2xl border border-slate-100 shadow-sm;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-50;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full hover:bg-slate-300;
+}
