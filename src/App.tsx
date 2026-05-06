@@ -1,10 +1,8 @@
 import { motion } from "motion/react";
-import { Star, CheckCircle2, ShoppingCart, ShieldCheck, Clock, Zap, MessageSquare, ChevronDown } from "lucide-react";
-import React, { useState, useRef } from "react";
+import { Star, CheckCircle2, ShieldCheck, Clock, Zap, ChevronDown } from "lucide-react";
+import React, { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import { cn } from "./lib/utils";
-
-// --- Components ---
 
 const Navbar = () => (
   <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
@@ -53,7 +51,6 @@ const Hero = ({ onBuy }: { onBuy: () => void }) => (
           </button>
         </div>
       </motion.div>
-      
       <motion.div
         className="lg:col-span-2 relative"
         initial={{ opacity: 0, scale: 0.9 }}
@@ -63,12 +60,7 @@ const Hero = ({ onBuy }: { onBuy: () => void }) => (
         <div className="relative group">
           <div className="absolute -inset-4 bg-purple-600/10 blur-3xl rounded-full opacity-50 group-hover:opacity-75 transition-opacity" />
           <div className="relative aspect-square rounded-3xl bg-white shadow-2xl overflow-hidden border border-slate-100 flex items-center justify-center p-4">
-            <img 
-              src="https://http2.mlstatic.com/D_NQ_NP_2X_827563-MLB110793279395_042026-F.webp" 
-              alt="Fita Clareadora Fotyo - Caixa" 
-              className="w-full h-full object-contain"
-              referrerPolicy="no-referrer"
-            />
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_827563-MLB110793279395_042026-F.webp" alt="Fita Clareadora Fotyo - Caixa" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
           </div>
           <div className="absolute -top-3 -right-3 bg-yellow-400 text-slate-900 text-[10px] font-black px-4 py-2 rounded-full shadow-md z-10">
             MAIS VENDIDAS
@@ -86,7 +78,6 @@ const Benefits = () => (
         <h2 className="text-3xl md:text-5xl font-bold mb-6">Por que escolher Fotyo?</h2>
         <p className="text-slate-500 text-lg">Desenvolvido com a mesma tecnologia usada nas melhores clínicas, mas no conforto do seu lar.</p>
       </div>
-      
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {[
           { icon: Zap, title: "Efeito Imediato", desc: "Clareamento visível em poucos dias de uso." },
@@ -94,11 +85,7 @@ const Benefits = () => (
           { icon: ShieldCheck, title: "Sem Sensibilidade", desc: "Fórmula balanceada que não agride o esmalte." },
           { icon: CheckCircle2, title: "Resultado Pro", desc: "Sorriso de consultório por uma fração do preço." }
         ].map((item, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ y: -5 }}
-            className="p-8 card-premium flex gap-4"
-          >
+          <motion.div key={i} whileHover={{ y: -5 }} className="p-8 card-premium flex gap-4">
             <div className="w-10 h-10 shrink-0 bg-slate-50 rounded-full flex items-center justify-center text-brand-purple">
               <item.icon className="w-5 h-5" />
             </div>
@@ -136,18 +123,18 @@ const HowToUse = () => (
       </div>
       <div className="relative">
         <div className="grid grid-cols-2 gap-4">
-           <div className="aspect-square rounded-2xl bg-white shadow-lg overflow-hidden border border-slate-100 p-2">
-              <img src="https://http2.mlstatic.com/D_NQ_NP_2X_728705-MLB110793459251_042026-F.webp" alt="Conteúdo do Kit" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
-           </div>
-           <div className="aspect-square rounded-2xl bg-white shadow-lg overflow-hidden border border-slate-100 p-2 translate-y-8">
-              <img src="https://http2.mlstatic.com/D_NQ_NP_2X_742616-MLB109893238362_042026-F.webp" alt="Fita Clareadora" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
-           </div>
-           <div className="aspect-square rounded-2xl bg-white shadow-lg overflow-hidden border border-slate-100 p-2 -translate-y-4">
-              <img src="https://http2.mlstatic.com/D_NQ_NP_2X_675968-MLB109893268144_042026-F.webp" alt="Fitas" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
-           </div>
-           <div className="aspect-square rounded-2xl bg-white shadow-lg overflow-hidden border border-slate-100 p-2 translate-y-4">
-              <img src="https://http2.mlstatic.com/D_NQ_NP_2X_659386-MLB110794855819_042026-F.webp" alt="Aplicação" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
-           </div>
+          <div className="aspect-square rounded-2xl bg-white shadow-lg overflow-hidden border border-slate-100 p-2">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_728705-MLB110793459251_042026-F.webp" alt="Conteúdo do Kit" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+          </div>
+          <div className="aspect-square rounded-2xl bg-white shadow-lg overflow-hidden border border-slate-100 p-2 translate-y-8">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_742616-MLB109893238362_042026-F.webp" alt="Fita Clareadora" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+          </div>
+          <div className="aspect-square rounded-2xl bg-white shadow-lg overflow-hidden border border-slate-100 p-2 -translate-y-4">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_675968-MLB109893268144_042026-F.webp" alt="Fitas" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+          </div>
+          <div className="aspect-square rounded-2xl bg-white shadow-lg overflow-hidden border border-slate-100 p-2 translate-y-4">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_659386-MLB110794855819_042026-F.webp" alt="Aplicação" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+          </div>
         </div>
       </div>
     </div>
@@ -169,8 +156,8 @@ const Testimonials = () => (
         ].map((t, i) => (
           <div key={i} className="card-premium p-8 relative">
             <div className="flex gap-1 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className={cn("w-3 h-3", i < t.rating ? "text-yellow-400 fill-yellow-400" : "text-slate-200")} />
+              {[...Array(5)].map((_, j) => (
+                <Star key={j} className={cn("w-3 h-3", j < t.rating ? "text-yellow-400 fill-yellow-400" : "text-slate-200")} />
               ))}
             </div>
             <p className="text-slate-600 text-sm italic mb-6 leading-relaxed">"{t.comment}"</p>
@@ -187,19 +174,39 @@ const Testimonials = () => (
 
 const Checkout = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState<{ cpf?: string; phone?: string }>({});
   const [formData, setFormData] = useState({
-    name: "",
-    cpf: "",
-    phone: "",
-    street: "",
-    number: "",
-    district: "",
-    city: "",
-    zip: ""
+    name: "", cpf: "", phone: "", street: "", number: "", district: "", city: "", zip: ""
   });
+
+  const formatCPF = (value: string) => {
+    const nums = value.replace(/\D/g, "").slice(0, 11);
+    return nums.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
+               .replace(/(\d{3})(\d{3})(\d{3})/, "$1.$2.$3")
+               .replace(/(\d{3})(\d{3})/, "$1.$2")
+               .replace(/(\d{3})/, "$1");
+  };
+
+  const formatPhone = (value: string) => {
+    const nums = value.replace(/\D/g, "").slice(0, 11);
+    return nums.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3")
+               .replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3")
+               .replace(/(\d{2})(\d{1,5})/, "($1) $2")
+               .replace(/(\d{1,2})/, "($1");
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const newErrors: { cpf?: string; phone?: string } = {};
+    const cpfNums = formData.cpf.replace(/\D/g, "");
+    const phoneNums = formData.phone.replace(/\D/g, "");
+    if (cpfNums.length !== 11) newErrors.cpf = "CPF deve ter 11 dígitos";
+    if (phoneNums.length !== 11) newErrors.phone = "WhatsApp deve ter DDD + 9 dígitos (11 no total)";
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+    setErrors({});
     setLoading(true);
     setTimeout(() => {
       onSubmit(formData);
@@ -231,67 +238,42 @@ const Checkout = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
               </div>
             </div>
           </div>
-          
           <div className="md:col-span-3 p-10 flex flex-col">
             <h3 className="text-xl font-bold text-slate-900 mb-6">Finalizar Compra</h3>
             <form onSubmit={handleSubmit} className="space-y-4 flex-1">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input 
-                  required
-                  value={formData.name}
-                  onChange={e => setFormData({...formData, name: e.target.value})}
-                  className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all md:col-span-2" 
-                  placeholder="Nome Completo"
-                />
-                <input 
-                  required
-                  value={formData.cpf}
-                  onChange={e => setFormData({...formData, cpf: e.target.value})}
-                  className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all" 
-                  placeholder="Seu CPF"
-                />
-                <input 
-                  required
-                  value={formData.phone}
-                  onChange={e => setFormData({...formData, phone: e.target.value})}
-                  className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all" 
-                  placeholder="WhatsApp"
-                />
-                <input 
-                  required
-                  value={formData.street}
-                  onChange={e => setFormData({...formData, street: e.target.value})}
-                  className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all md:col-span-2" 
-                  placeholder="Rua / Logradouro"
-                />
-                <input 
-                  required
-                  value={formData.number}
-                  onChange={e => setFormData({...formData, number: e.target.value})}
-                  className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all" 
-                  placeholder="Número"
-                />
-                <input 
-                  required
-                  value={formData.district}
-                  onChange={e => setFormData({...formData, district: e.target.value})}
-                  className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all" 
-                  placeholder="Bairro"
-                />
-                <input 
-                  required
-                  value={formData.city}
-                  onChange={e => setFormData({...formData, city: e.target.value})}
-                  className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all" 
-                  placeholder="Cidade"
-                />
-                <input 
-                  required
-                  value={formData.zip}
-                  onChange={e => setFormData({...formData, zip: e.target.value})}
-                  className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all" 
-                  placeholder="CEP"
-                />
+                <input required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all md:col-span-2" placeholder="Nome Completo" />
+                <div className="flex flex-col gap-1">
+                  <input
+                    required
+                    value={formData.cpf}
+                    onChange={e => {
+                      setFormData({...formData, cpf: formatCPF(e.target.value)});
+                      setErrors({...errors, cpf: undefined});
+                    }}
+                    className={cn("w-full text-xs p-3.5 rounded-lg border focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all", errors.cpf ? "border-red-400" : "border-slate-200")}
+                    placeholder="CPF (000.000.000-00)"
+                  />
+                  {errors.cpf && <span className="text-red-500 text-[10px]">{errors.cpf}</span>}
+                </div>
+                <div className="flex flex-col gap-1">
+                  <input
+                    required
+                    value={formData.phone}
+                    onChange={e => {
+                      setFormData({...formData, phone: formatPhone(e.target.value)});
+                      setErrors({...errors, phone: undefined});
+                    }}
+                    className={cn("w-full text-xs p-3.5 rounded-lg border focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all", errors.phone ? "border-red-400" : "border-slate-200")}
+                    placeholder="WhatsApp com DDD (00) 00000-0000"
+                  />
+                  {errors.phone && <span className="text-red-500 text-[10px]">{errors.phone}</span>}
+                </div>
+                <input required value={formData.street} onChange={e => setFormData({...formData, street: e.target.value})} className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all md:col-span-2" placeholder="Rua / Logradouro" />
+                <input required value={formData.number} onChange={e => setFormData({...formData, number: e.target.value})} className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all" placeholder="Número" />
+                <input required value={formData.district} onChange={e => setFormData({...formData, district: e.target.value})} className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all" placeholder="Bairro" />
+                <input required value={formData.city} onChange={e => setFormData({...formData, city: e.target.value})} className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all" placeholder="Cidade" />
+                <input required value={formData.zip} onChange={e => setFormData({...formData, zip: e.target.value})} className="w-full text-xs p-3.5 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all" placeholder="CEP" />
               </div>
               <button disabled={loading} type="submit" className="w-full btn-primary py-5 text-sm uppercase tracking-widest mt-4">
                 {loading ? "Processando..." : "COMPRAR AGORA E CLAREAR"}
@@ -306,26 +288,19 @@ const Checkout = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
 
 const PixPayment = ({ data }: { data: any }) => {
   const [copied, setCopied] = useState(false);
-  
   const handleCopy = () => {
     navigator.clipboard.writeText(data.pixCode);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
-
   return (
     <section className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
-      <motion.div 
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        className="max-w-md w-full bg-white rounded-3xl shadow-2xl p-10 text-center"
-      >
+      <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="max-w-md w-full bg-white rounded-3xl shadow-2xl p-10 text-center">
         <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <h2 className="text-3xl font-black mb-2">Pedido Gerado!</h2>
         <p className="text-slate-500 mb-8">Escaneie o QR Code ou copie o código abaixo para pagar via PIX.</p>
-        
         <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex justify-center mb-8">
           {data.qrCode ? (
             <img src={data.qrCode} alt="PIX QR Code" className="w-52 h-52" referrerPolicy="no-referrer" />
@@ -333,33 +308,24 @@ const PixPayment = ({ data }: { data: any }) => {
             <QRCodeSVG value={data.pixCode} size={200} />
           )}
         </div>
-        
         <div className="bg-brand-light p-4 rounded-xl mb-8 flex flex-col gap-2">
           <p className="text-xs font-bold text-brand-purple uppercase tracking-[0.2em]">Copia e Cola</p>
           <div className="flex items-center gap-2">
-            <input 
-              readOnly 
-              value={data.pixCode} 
-              className="bg-transparent text-xs text-brand-purple border-none outline-none flex-1 truncate font-mono" 
-            />
-            <button 
-              onClick={handleCopy}
-              className="bg-brand-purple text-white p-2 rounded-lg hover:bg-violet-700 transition-colors"
-            >
+            <input readOnly value={data.pixCode} className="bg-transparent text-xs text-brand-purple border-none outline-none flex-1 truncate font-mono" />
+            <button onClick={handleCopy} className="bg-brand-purple text-white p-2 rounded-lg hover:bg-violet-700 transition-colors">
               {copied ? "Ok!" : "Copiar"}
             </button>
           </div>
         </div>
-
         <div className="space-y-4">
-            <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
-                <span className="text-slate-500 text-sm">Status</span>
-                <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" />
-                    <span className="text-orange-600 font-bold text-sm">Aguardando Pagamento</span>
-                </div>
+          <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+            <span className="text-slate-500 text-sm">Status</span>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" />
+              <span className="text-orange-600 font-bold text-sm">Aguardando Pagamento</span>
             </div>
-            <p className="text-center text-xs text-slate-400 font-medium">Após o pagamento, você receberá a confirmação no seu e-mail.</p>
+          </div>
+          <p className="text-center text-xs text-slate-400 font-medium">Após o pagamento, você receberá a confirmação no seu e-mail.</p>
         </div>
       </motion.div>
     </section>
@@ -367,42 +333,33 @@ const PixPayment = ({ data }: { data: any }) => {
 };
 
 const FAQ = () => {
-    const questions = [
-        { q: "Funciona mesmo?", a: "Sim! Nossa fórmula utiliza o mesmo agente clareador de consultórios em uma base segura para uso doméstico." },
-        { q: "Dá sensibilidade?", a: "Nossa fita foi projetada para ser gentil. A maioria dos usuários não sente nenhuma sensibilidade." },
-        { q: "Quanto tempo dura o efeito?", a: "O resultado pode durar de 6 a 12 meses, dependendo dos seus hábitos alimentares." }
-    ];
-
-    const [open, setOpen] = useState<number | null>(null);
-
-    return (
-        <section className="bg-white">
-            <div className="section-container max-w-4xl">
-                <div className="text-center mb-16">
-                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Dúvidas</p>
-                    <h2 className="text-3xl md:text-5xl font-black text-slate-900">Perguntas Frequentes</h2>
-                </div>
-                <div className="space-y-4">
-                    {questions.map((item, i) => (
-                        <div key={i} className="card-premium overflow-hidden">
-                            <button 
-                                onClick={() => setOpen(open === i ? null : i)}
-                                className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-slate-50 transition-colors"
-                            >
-                                <span className="font-bold">{item.q}</span>
-                                <ChevronDown className={cn("w-4 h-4 transition-transform text-slate-400", open === i && "rotate-180")} />
-                            </button>
-                            {open === i && (
-                                <div className="px-8 pb-6 text-slate-500 text-sm leading-relaxed">
-                                    {item.a}
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
+  const questions = [
+    { q: "Funciona mesmo?", a: "Sim! Nossa fórmula utiliza o mesmo agente clareador de consultórios em uma base segura para uso doméstico." },
+    { q: "Dá sensibilidade?", a: "Nossa fita foi projetada para ser gentil. A maioria dos usuários não sente nenhuma sensibilidade." },
+    { q: "Quanto tempo dura o efeito?", a: "O resultado pode durar de 6 a 12 meses, dependendo dos seus hábitos alimentares." }
+  ];
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <section className="bg-white">
+      <div className="section-container max-w-4xl">
+        <div className="text-center mb-16">
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Dúvidas</p>
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900">Perguntas Frequentes</h2>
+        </div>
+        <div className="space-y-4">
+          {questions.map((item, i) => (
+            <div key={i} className="card-premium overflow-hidden">
+              <button onClick={() => setOpen(open === i ? null : i)} className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-slate-50 transition-colors">
+                <span className="font-bold">{item.q}</span>
+                <ChevronDown className={cn("w-4 h-4 transition-transform text-slate-400", open === i && "rotate-180")} />
+              </button>
+              {open === i && <div className="px-8 pb-6 text-slate-500 text-sm leading-relaxed">{item.a}</div>}
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 const Footer = () => (
@@ -421,8 +378,6 @@ const Footer = () => (
   </footer>
 );
 
-// --- Main App ---
-
 export default function App() {
   const [order, setOrder] = useState<any>(null);
 
@@ -433,7 +388,6 @@ export default function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
-      
       const text = await response.text();
       let data;
       try {
@@ -443,7 +397,6 @@ export default function App() {
         alert("O servidor retornou uma resposta inesperada. Verifique se as configurações da Vercel estão corretas.");
         return;
       }
-
       if (!response.ok) {
         const details = typeof data.details === 'object' ? JSON.stringify(data.details) : data.details;
         alert(`${data.error || "Erro no processamento"}\n\nDetalhes: ${details || "Nenhum detalhe disponível"}`);
@@ -456,13 +409,9 @@ export default function App() {
     }
   };
 
-  if (order) {
-    return <PixPayment data={order} />;
-  }
+  if (order) return <PixPayment data={order} />;
 
-  const scrollToCheckout = () => {
-    document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const scrollToCheckout = () => document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
     <div className="font-sans antialiased">
@@ -473,17 +422,15 @@ export default function App() {
       <Testimonials />
       <Checkout onSubmit={handleCheckout} />
       <FAQ />
-      
       <section className="bg-slate-50 py-16">
         <div className="section-container flex flex-col md:flex-row items-center gap-10">
-           <div className="w-20 h-20 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl font-black shrink-0 shadow-lg">G</div>
-           <div>
-              <h3 className="text-xl font-black mb-2 uppercase tracking-widest">GARANTIA DE 7 DIAS</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">Se você não estiver satisfeito com os resultados, devolvemos seu dinheiro sem burocracia. Tecnologia Americana em sua casa com risco zero.</p>
-           </div>
+          <div className="w-20 h-20 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl font-black shrink-0 shadow-lg">G</div>
+          <div>
+            <h3 className="text-xl font-black mb-2 uppercase tracking-widest">GARANTIA DE 7 DIAS</h3>
+            <p className="text-slate-500 text-sm leading-relaxed">Se você não estiver satisfeito com os resultados, devolvemos seu dinheiro sem burocracia. Tecnologia Americana em sua casa com risco zero.</p>
+          </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
