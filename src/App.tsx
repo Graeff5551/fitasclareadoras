@@ -433,16 +433,26 @@ export default function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
-      const data = await response.json();
+      
+      const text = await response.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        console.error("Non-JSON response:", text);
+        alert("O servidor retornou uma resposta inesperada. Verifique se as configurações da Vercel estão corretas.");
+        return;
+      }
+
       if (!response.ok) {
         const details = typeof data.details === 'object' ? JSON.stringify(data.details) : data.details;
-        alert(`${data.error}\n\nDetalhes: ${details || "Nenhum detalhe disponível"}`);
+        alert(`${data.error || "Erro no processamento"}\n\nDetalhes: ${details || "Nenhum detalhe disponível"}`);
         return;
       }
       setOrder(data);
     } catch (error) {
       console.error("Checkout failed:", error);
-      alert("Erro de conexão. Verifique sua internet e tente novamente.");
+      alert("Não foi possível conectar ao servidor. Verifique sua conexão ou se o site ainda está subindo na Vercel.");
     }
   };
 
