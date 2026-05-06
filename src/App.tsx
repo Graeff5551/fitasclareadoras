@@ -189,10 +189,10 @@ const Checkout = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
 
   const formatPhone = (value: string) => {
     const nums = value.replace(/\D/g, "").slice(0, 11);
-    return nums.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3")
-               .replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3")
-               .replace(/(\d{2})(\d{1,5})/, "($1) $2")
-               .replace(/(\d{1,2})/, "($1");
+    if (nums.length <= 2) return `(${nums}`;
+    if (nums.length <= 7) return `(${nums.slice(0,2)}) ${nums.slice(2)}`;
+    if (nums.length <= 10) return `(${nums.slice(0,2)}) ${nums.slice(2,6)}-${nums.slice(6)}`;
+    return `(${nums.slice(0,2)}) ${nums.slice(2,7)}-${nums.slice(7,11)}`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
