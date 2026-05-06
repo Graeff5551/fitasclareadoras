@@ -371,7 +371,7 @@ const Footer = () => (
       </div>
       <div className="flex items-center gap-2">
         <div className="w-5 h-5 bg-sky-500 rounded-full flex items-center justify-center text-[10px] font-bold">?</div>
-        <span className="text-[10px] font-bold tracking-widest text-slate-400">
+        <span className="text-[10px] font-bold tracking-widest text-slate-400"> duvidas
       </div>
     </div>
     <p className="text-[10px] text-slate-500 italic font-medium">Fotyo Smiles Inc. © 2026 - Tecnologia Americana em sua Casa</p>
